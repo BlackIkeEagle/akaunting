@@ -1,0 +1,5 @@
+FROM dockerwest/nginx-laravel:mainline
+
+COPY ./application/public /phpapp/public
+RUN chown -R nginx:nginx /phpapp/public \
+    && rm /phpapp/public/artisan
