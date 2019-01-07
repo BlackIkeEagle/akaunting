@@ -14,6 +14,13 @@ if (version_compare(PHP_VERSION, AKAUNTING_PHP, '<')) {
     die('Your host needs to use PHP ' . AKAUNTING_PHP . ' or higher to run Akaunting');
 }
 
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+    $_SERVER['REQUEST_SCHEME'] = $_SERVER['HTTP_X_FORWARDED_PROTO'];
+    if ('https' == strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+        $_SERVER['HTTPS'] = 'on';
+    }
+}
+
 // Register the auto-loader
 require(__DIR__.'/bootstrap/autoload.php');
 
