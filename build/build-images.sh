@@ -15,9 +15,6 @@ git clone git@github.com:BlackIkeEagle/akaunting.git application
 cd application
 git checkout $version
 composer install --no-dev
-cp -aL public public-full
-rm -rf public
-mv public-full public
 rm -rf .git*
 
 cd ..
