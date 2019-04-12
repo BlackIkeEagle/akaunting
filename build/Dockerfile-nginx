@@ -9,5 +9,5 @@ COPY ./application/vendor/almasaeed2010/adminlte/plugins \
     /phpapp/public/vendor/almasaeed2010/adminlte/plugins
 COPY ./application/vendor/akaunting/language/src/Resources/assets \
     /phpapp/public/vendor/akaunting/language/src/Resources/assets
-COPY index.php /phpapp/public/index.php
+COPY ./application/index.php /phpapp/public/index.php
 RUN chown -R nginx:nginx /phpapp/public
