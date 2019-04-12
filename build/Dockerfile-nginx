@@ -1,5 +1,13 @@
 FROM dockerwest/nginx-laravel:mainline
 
 COPY ./application/public /phpapp/public/public
+COPY ./application/vendor/almasaeed2010/adminlte/bootstrap \
+    /phpapp/public/vendor/almasaeed2010/adminlte/bootstrap
+COPY ./application/vendor/almasaeed2010/adminlte/dist \
+    /phpapp/public/vendor/almasaeed2010/adminlte/dist
+COPY ./application/vendor/almasaeed2010/adminlte/plugins \
+    /phpapp/public/vendor/almasaeed2010/adminlte/plugins
+COPY ./application/vendor/akaunting/language/src/Resources/assets \
+    /phpapp/public/vendor/akaunting/language/src/Resources/assets
 COPY index.php /phpapp/public/index.php
 RUN chown -R nginx:nginx /phpapp/public
