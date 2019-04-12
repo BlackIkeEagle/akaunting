@@ -1,4 +1,4 @@
 FROM dockerwest/php-laravel:7.2
 
-COPY ./application /phpapp/
+COPY ./application /phpapp/public
 RUN chown -R www-data:www-data /phpapp
